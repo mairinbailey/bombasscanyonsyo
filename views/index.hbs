@@ -1,2 +1,14 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1>Canyons Fuck Yeeee!</h1>
+<a class='yuge' href="/create"> Add Y'R fucking canyon, yo!</a>
+
+<ul>
+{{#each canyons}}
+<li>
+  <a class='list' href="/{{this.id}}">{{this.name}}</a>
+  <br>
+  <img class='canyons_biatch' src={{this.image}} alt="image">
+  <br>
+
+</li>
+{{/each}}
+</ul>
