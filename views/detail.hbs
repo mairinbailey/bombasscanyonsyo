@@ -1,4 +1,9 @@
 <h2> {{canyon.name}} </h2>
-<a href="/">HOME</a>
-<img src='{{canyon.image}}' alt='canyon'>
-<p> Can you even??? {{canyon.description}} </p>
+<div class='detail_div'>
+<a class='detail' href="/">HOME</a>
+<a class='detail' href='/{{canyon.id}}/edit'>EDIT</a>
+<a class='detail' href='/{{canyon.id}}/delete'>DELETE</a>
+</div>
+<img class="canyons_biatch_detail" src='{{canyon.image}}' alt='canyon'>
+<p class='big_p'> Description of this fucking canyon: </p>
+<p class='big_p'> {{canyon.description}} </p>

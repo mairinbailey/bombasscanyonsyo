@@ -19,23 +19,25 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
-router.post('/:id/edit', function(req, res, next) {
-  knex('canyons').where({id:req.params.id}).first().then(function(canyon) {
-    res.render('edit', {canyon:canyon});
-  });
-});
-
 router.get('/:id/edit', function(req, res, next) {
   knex('canyons').where({id: req.params.id}).first().then(function(canyon) {
     res.render('edit', {canyon: canyon});
   });
 });
 
+router.post('/:id/edit', function(req, res, next) {
+  knex('canyons').where({id:req.params.id}).update(req.body).then(function(canyon) {
+    res.redirect('/' + req.params.id);
+  });
+});
+
+
+
 router.get('/:id/delete', function(req,res,next) {
   knex('canyons').where({id: req.params.id}).del().then(function() {
-    res.redirect('/')
-  })
-})
+    res.redirect('/');
+  });
+});
 
 router.post('/create', function(req, res, next) {
   knex('canyons').insert(req.body).then(function() {
