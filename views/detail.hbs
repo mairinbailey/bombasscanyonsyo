@@ -1,8 +1,12 @@
 <h2> {{canyon.name}} </h2>
 <div class='detail_div'>
-<a class='detail' href="/">HOME</a>
-<a class='detail' href='/{{canyon.id}}/edit'>EDIT</a>
-<a class='detail' href='/{{canyon.id}}/delete'>DELETE</a>
+<a class='detail' href="/canyon">HOME</a>
+<a class='detail' href='/canyon/{{canyon.id}}/edit'>EDIT</a>
+
+<form action="/canyon/{{canyon.id}}?_method=delete" method="post">
+  <!-- <a class='detail' href='/{{canyon.id}}/delete'>DELETE</a> -->
+  <button class= 'detail' type="sumbit" name="delete">DELETE</button>
+</form>
 </div>
 <img class="canyons_biatch_detail" src='{{canyon.image}}' alt='canyon'>
 <p class='big_p'> Description of this fucking canyon: </p>
